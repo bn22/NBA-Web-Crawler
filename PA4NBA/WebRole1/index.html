@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PA4 Info344</title>
+    <script type="text/javascript" src="http://srvpub.com/adServe/banners?tid=37300_54909_0&type=slider&side=right&size=300x250" async></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">   
+</head>
+<body>
+    <div id="initialSearch">
+        <input type="text" id="inputValue" placeholder="Please Enter A Phrase" onkeyup="findMatches()"/>
+        <input type="button" class="btn btn-success" value="Search" onclick="startQuery()" />
+        <input type="button" class="btn btn-success" value="Dashboard" onclick="showDashboard()" />
+        <div id="json"></div>
+        <div id="nbaResult"></div>
+        <div id="cnnArticles">
+        </div>
+    </div>
+
+    <div id="dashboard">
+        <div class="col-md-3">
+            <table id="controls">
+                <tr>
+                    <td>
+                        <h4>Dashboard Information</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Start Crawler" onclick="beginCrawler()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="End Crawler" onclick="endCrawler()" />
+                    </td>
+                </tr>    
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Clear Crawler" onclick="clearCrawler()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Queue Size" onclick="findQueueCount()" />
+                    </td>
+                </tr>              
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Worker Status" onclick="findWorkerState()" />
+                    </td>
+                </tr>             
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="CPU Percent" onclick="cpuUse()" />
+                    </td>
+                </tr>              
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Memory Left" onclick="mem()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Last 10 URLS" onclick="lastTen()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Size of Table" onclick="checksPassed()" />
+                    </td>
+                </tr>             
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="# Crawled" onclick="checkPerform()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Download Wiki" onclick="downloadWiki()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Build Trie" onclick="buildTrie()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Trie Status" onclick="trieStatus()" />
+                    </td>
+                </tr>          
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="# of Titles" onclick="numberOfTitles()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Last Title" onclick="lastTitle()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Last 10 Failed URL" onclick="lastTenErrors()" />
+                    </td>
+                </tr>                       
+                <tr>
+                    <td>
+                        <input type="button" id="dashboardButton" class="btn btn-link" value="Last 10 Errors" onclick="readErrorTable()" />
+                    </td>
+                </tr>               
+            </table>
+        </div>
+        <div class="col-md-6">
+            <div id="dashboardResults"></div>
+        </div>
+        <div class="col-md-3">           
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

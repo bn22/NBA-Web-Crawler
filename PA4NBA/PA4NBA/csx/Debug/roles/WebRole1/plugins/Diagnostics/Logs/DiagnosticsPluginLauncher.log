@@ -1,0 +1,14 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Emulator config file set to C:\Users\bennyn\Desktop\PA4NBA\PA4NBA\csx\Debug\roles\WebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] DiagnosticsStoreRootPath set to: C:\Users\bennyn\AppData\Local\dftmp\Resources\7b7cf969-fb8e-497c-b5c4-631ae5cee689
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Loading config file: C:\Users\bennyn\Desktop\PA4NBA\PA4NBA\csx\Debug\roles\WebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Emulator config file set to C:\Users\bennyn\Desktop\PA4NBA\PA4NBA\csx\Debug\roles\WebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2015 10:18:52 AM] Resetting DiagnosticPlugin

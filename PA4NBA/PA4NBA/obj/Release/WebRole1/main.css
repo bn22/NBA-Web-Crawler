@@ -1,0 +1,67 @@
+﻿#json, #cnnArticles {
+    font-size: 12px;
+}
+
+/* div container containing the form  */
+#initialSearch {
+    margin:auto;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    background-color: #f3f3f3;
+}
+
+#dashboardButton, #startButton {
+    width: 150px;
+}
+
+#dashboard {
+    display: none;
+    background-color: aliceblue;
+}
+
+#searchContainer {
+    display: none;
+    margin:auto;
+    position:absolute;
+    top: 25%;
+    left: 50%;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    background-color: #f3f3f3;
+}
+                               
+/* Style the search input field. */
+#inputValue {
+    float:left; 
+    width:300px; 
+    height:27px; 
+    line-height:27px;
+    text-indent:10px; 
+    font-family:arial, sans-serif; 
+    font-size:1em; 
+    color:#333; 
+    background: #fff; 
+    border:solid 1px #d9d9d9; 
+    border-top:solid 1px #c0c0c0; 
+    border-right:none;
+}
+
+#rootValue {
+    width: 38%;
+}
+
+.btn-link {
+    text-align: left;
+    background-color: aliceblue;
+}
+
+.btn-link:hover {
+    background-color: gray;
+}
+
+#dashboardResults {
+    text-align: center
+}
