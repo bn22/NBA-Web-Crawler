@@ -25,15 +25,9 @@
     </Endpoints>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\bennyn\Desktop\PA4NBA\PA4NBA\rcf\Debug\WebRole1Content\" />
-      </Content>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Users\bennyn\Desktop\PA4NBA\PA4NBA\ecf\WebRole1Content\" />
+        <SourceDirectory path="C:\Users\bennyn\Desktop\Assignment Four Deliverables\PA4NBA\PA4NBA\rcf\Debug\WebRole1Content\" />
       </Content>
     </Contents>
-    <Imports>
-      <Import moduleName="Diagnostics" />
-    </Imports>
   </WebRole>
   <WorkerRole name="WorkerRole1" vmsize="Small">
     <ConfigurationSettings>
@@ -41,14 +35,8 @@
     </ConfigurationSettings>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\bennyn\Desktop\PA4NBA\PA4NBA\rcf\Debug\WorkerRole1Content\" />
-      </Content>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Users\bennyn\Desktop\PA4NBA\PA4NBA\ecf\WorkerRole1Content\" />
+        <SourceDirectory path="C:\Users\bennyn\Desktop\Assignment Four Deliverables\PA4NBA\PA4NBA\rcf\Debug\WorkerRole1Content\" />
       </Content>
     </Contents>
-    <Imports>
-      <Import moduleName="Diagnostics" />
-    </Imports>
   </WorkerRole>
 </ServiceDefinition>

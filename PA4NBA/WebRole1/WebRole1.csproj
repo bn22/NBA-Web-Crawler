@@ -111,6 +111,7 @@
     <Compile Include="trieNode.cs" />
     <Compile Include="trieStatus.cs" />
     <Compile Include="uniqueURL.cs" />
+    <Compile Include="urlData.cs" />
     <Compile Include="urlInfo.cs" />
     <Compile Include="WebRole.cs" />
     <Compile Include="WebService1.asmx.cs">

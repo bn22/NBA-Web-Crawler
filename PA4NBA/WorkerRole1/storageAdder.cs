@@ -84,7 +84,7 @@ namespace WorkerRole1
                                 body = Uri.UnescapeDataString(splitBody[1]);
                             }
                         }
-                        String[] titleWords = title.Split(new char[] { '.', ':', ',', '"', ';', '-', ')', '(' });
+                        String[] titleWords = title.Split(new char[] { '.', ':', ',', '"', ';', '-', ')', ' ', '(', '!'});
                         wCrawler.visitedURL.Add(url);
                         uniqueURL newURL = new uniqueURL(url);
                         newURL.url = url;
@@ -96,7 +96,7 @@ namespace WorkerRole1
                         for (int i = 0; i < titleWords.Length; i++)
                         {
                             String currentWord = titleWords[i];
-                            if (!currentWord.Equals(" "))
+                            if (!currentWord.Equals(" ") || !currentWord.Equals(""))
                             {                               
                                 float memUsage = memProcess.NextValue();
                                 String memAvailable = memUsage.ToString();

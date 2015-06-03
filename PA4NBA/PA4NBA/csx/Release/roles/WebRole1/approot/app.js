@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿
 function cpuUse() {
     $.ajax({
         type: "POST",
@@ -125,20 +125,20 @@ function findArticles() {
         success: function (msg) {
             $('#cnnArticles').empty();
             if (msg.d == "[]") {
-                $('#cnnArticles').html("No Results Were Found");
+                $('#cnnArticles').html("<br>No Articles Were Found");
             }
             else {
                 console.log(msg.d);
-                $('#cnnArticles').append("<br><b>Article Results</b><br>");
+                $('#cnnArticles').append("<br><b>Article Results</b>");
                 var text = msg.d.substring(1, msg.d.length - 1);
                 var res = text.split(",");
                 for (var i = 0; i < res.length; i++) {
-                    $('#cnnArticles').append(unescape(res[i].substring(1, res[i].length - 1)) + "<br>");
+                    $('#cnnArticles').append("<br>" + unescape(res[i].substring(1, res[i].length - 1)));
                 }
             }
         },
         error: function (msg) {
-            console.log(msg);
+            $('#cnnArticles').html("<br>No Articles Were Found");
         }
     });
 };
@@ -151,16 +151,24 @@ function findPlayers() {
         url: "http://54.149.230.201/index.php",
         data: { searchName: player },
         dataType: "jsonp",
+        type: 'GET',
         success: function (msg) {
             $('#nbaResult').empty();
-            if (msg.d != []) {
-                $('#nbaResult').html(msg.d.substring(1, msg.d.length - 1));
+            console.log(msg);
+            if (msg.length == 1) {
+                $('#nbaResult').append("<br><b>" + JSON.stringify(msg[0][0]).substring(1, JSON.stringify(msg[0][0]).length - 1) + "</h3>");
+                $('#nbaResult').append("<br> Games Played: " + JSON.stringify(msg[0][1]).substring(1, JSON.stringify(msg[0][1]).length - 1));
+                $('#nbaResult').append("<br> Field Goal Percentage: " + JSON.stringify(msg[0][2]).substring(1, JSON.stringify(msg[0][2]).length - 1) + "%");
+                $('#nbaResult').append("<br> Three Point Percentage: " + JSON.stringify(msg[0][3]).substring(1, JSON.stringify(msg[0][3]).length - 1) + "%");
+                $('#nbaResult').append("<br> Free Throw Percentage: " + JSON.stringify(msg[0][4]).substring(1, JSON.stringify(msg[0][4]).length - 1) + "%");
+                $('#nbaResult').append("<br> Points Per Game: " + JSON.stringify(msg[0][5]).substring(1, JSON.stringify(msg[0][5]).length - 1));                
             } else {
-                $('#nbaResult').html("Loading");
+                $('#nbaResult').html("<br>No NBA Player Results Were Found");
             }
         },
         error: function (msg) {
             console.log(msg);
+            $('#nbaResult').html("<br>No NBA Player Results Were Found");
         }
     });
 };
@@ -244,7 +252,7 @@ function findMatches() {
             $('#json').empty();
             $('#json').append("Results for <b>" + document.getElementById("inputValue").value + "</b> <br>");
             if (msg.d == "[]") {
-                $('#json').append("No Results Were Found");
+                $('#json').append("No Suggestions Were Found");
             } else {
                 var validInput = /^[a-zA-Z ]+$/.test(document.getElementById("inputValue").value);;
                 if (validInput) {

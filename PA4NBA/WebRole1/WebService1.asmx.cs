@@ -134,7 +134,7 @@ namespace WebRole1
                         if (lineCount % 2000 == 0)
                         {
                             float memUsage = memProcess.NextValue();
-                            if (memUsage < 50)
+                            if (memUsage < 5)
                             {
                                 break;
                             }
@@ -171,6 +171,7 @@ namespace WebRole1
         public String findCNNArticles(String userInput)
         {
             List<String> queryResults = new List<string>();
+            List<urlData> linqHelper = new List<urlData>();
             userInput = userInput.ToLower();
             if (dynamicCache.ContainsKey(userInput))
             {
@@ -186,16 +187,29 @@ namespace WebRole1
                             wordsInUserInput[i]));
                     foreach (urlInfo entity in table.ExecuteQuery(lastestQuery))
                     {
-                        queryResults.Add(entity.title.ToString());
+                        DateTime lastmod = new DateTime();
+                        String rightNow = entity.lastModifiedDate.ToString();
+                        if (rightNow.Equals(""))
+                        {
+                            lastmod = new DateTime(2015, 4, 1);
+                        }
+                        else
+                        {
+                            lastmod = Convert.ToDateTime(rightNow);
+                        }
+                        urlData info = new urlData(Uri.EscapeDataString(entity.RowKey.ToString()), lastmod, entity.title.ToString());
+                        linqHelper.Add(info);
                     }
                 }
-                String[] results = queryResults.ToArray();
-                var findMostFrequent = results
-                    .GroupBy(x => x)
-                    .Select(x => new Tuple<String, int>(x.Key, x.ToList().Count))
-                    .OrderByDescending(x => x.Item2);
-                queryResults = new List<string>();
-                foreach (var s in findMostFrequent)
+                var filteredResults = linqHelper
+                    .GroupBy(x => x.PartitionKey)
+                    .Select(
+                        x =>
+                            new Tuple<String, int, DateTime, string>(x.ElementAt(0).url, x.ToList().Count,
+                                x.ElementAt(0).lastModfiedDate, x.ElementAt(0).title))
+                    .OrderByDescending(x => x.Item2)
+                    .ThenByDescending(x => x.Item3);
+                foreach (var s in filteredResults)
                 {
                     if (queryResults.Count < 10)
                     {
